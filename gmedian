@@ -1,0 +1,22 @@
+#!/bin/bash
+
+awk '
+
+  {
+    if(NR==1){i=1; ID=$1; arr[i]=$2}
+    else if(ID==$1){i=i+1; arr[i]=$2}
+    else {n    = asort(arr, dest, "@val_num_asc");
+          medi = int(i/2)+1;
+          out  = (i%2==1?dest[medi]:(dest[medi-1]+dest[medi])/2);
+          print ID"\t"out;
+          delete arr; ID=$1; i=1; arr[i]=$2}
+  }
+
+  END {
+    n    = asort(arr,dest,"@val_num_asc");
+    medi = int(i/2)+1;
+    out  = (i%2==1?dest[medi]:(dest[medi-1]+dest[medi])/2);
+    print ID"\t"out
+  }
+
+'

@@ -1,0 +1,2 @@
+#!/bin/bash
+sed 's/^\t/NA\t/;s/\t$/\tNA/;:0 s/\t\t/\tNA\t/;t0'

@@ -1,0 +1,2 @@
+#!/bin/bash
+awk '{if(!arr[$1]){ arr[$1]=$2 } else { arr[$1] = (arr[$1]>$2?$2:arr[$1]) }} END {for(k in arr) print k,arr[k]}'
