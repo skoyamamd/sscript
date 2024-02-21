@@ -4,6 +4,9 @@
 #include <string>
 
 // cpp program to convert plink2 .raw format files
+// [compile] cpp -o convert convert.c
+// [usege] cat your_raw_file.raw | ./convert > your_output_file
+// roughly 3 times faster than awk implementation
 
 int main() {
   std::string line;
